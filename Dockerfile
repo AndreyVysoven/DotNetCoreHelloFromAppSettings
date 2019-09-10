@@ -11,7 +11,7 @@ RUN dotnet build -c Release -o default DotNetCoreHelloFromAppSettings.csproj
 #Билдим и определяем значаение 
 RUN cd /app/src/DotNetCoreHelloFromAppSettings && sed -i 's/Hello World/Hello from ENV!!/g' appsettings.json && dotnet build -c Release -o test1 DotNetCoreHelloFromAppSettings.csproj
 
-#ENV HelloEnv=/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll
+ENV HelloEnv=/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll
 
 ENTRYPOINT ["MyReconfScriptTest.sh"]
 
