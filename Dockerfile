@@ -25,6 +25,3 @@ RUN ["chmod", "+x", "/app/MyReconfScriptTest.sh"]
 ENTRYPOINT ["/app/MyReconfScriptTest.sh"]
 
 
-#Test_Triger TeamCity2
-
-
