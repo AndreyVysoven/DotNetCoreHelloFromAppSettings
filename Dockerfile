@@ -8,14 +8,23 @@ ADD MyReconfScriptTest.sh /app
 #Билдим по дефолту
 RUN dotnet build -c Release -o default DotNetCoreHelloFromAppSettings.csproj
 
+
 #Билдим и определяем значаение 
 RUN cd /app/src/DotNetCoreHelloFromAppSettings && sed -i 's/Hello World/Hello from ENV!!/g' appsettings.json && dotnet build -c Release -o test1 DotNetCoreHelloFromAppSettings.csproj
 
-ENV HelloEnv=/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll
+
+#ENV HelloEnv=/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll
+
+#ENV RunHello="dotnet $Hello"
+#ENV HelloEnv=Hello_from_Env!!!
 
 ENTRYPOINT ["MyReconfScriptTest.sh"]
 
+
 RUN ["chmod", "+x", "/app/MyReconfScriptTest.sh"]
 ENTRYPOINT ["/app/MyReconfScriptTest.sh"]
+
+
+#Test_Triger TeamCity
 
 
