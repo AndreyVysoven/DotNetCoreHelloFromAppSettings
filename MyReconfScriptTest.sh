@@ -11,3 +11,4 @@ if [ "$T1" == "$T2" ]; then
 cd /app/src/DotNetCoreHelloFromAppSettings/default/ && dotnet DotNetCoreHelloFromAppSettings.dll
 fi
 
+echo $HelloEnv
