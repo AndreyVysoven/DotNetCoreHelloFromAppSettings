@@ -15,8 +15,6 @@ RUN cd /app/src/DotNetCoreHelloFromAppSettings && sed -i 's/Hello World/Hello fr
 
 #ENV HelloEnv=/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll
 
-#ENV RunHello="dotnet $Hello"
-#ENV HelloEnv=Hello_from_Env!!!
 
 ENTRYPOINT ["MyReconfScriptTest.sh"]
 
