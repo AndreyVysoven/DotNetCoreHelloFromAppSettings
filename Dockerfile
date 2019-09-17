@@ -18,6 +18,6 @@ RUN cd /app/src/DotNetCoreHelloFromAppSettings && sed -i 's/Hello World/Hello fr
 ENV HelloEnv=""
 
 RUN ["chmod", "+x", "/app/MyReconfScriptTest.sh"]
-ENTRYPOINT ["/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll"]
+ENTRYPOINT ["dotnet", "/app/src/DotNetCoreHelloFromAppSettings/test1/DotNetCoreHelloFromAppSettings.dll"]
 
 
